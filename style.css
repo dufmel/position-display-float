@@ -1,0 +1,150 @@
+.parent-container {
+    background-color: rgb(247, 247, 154);
+    border: 2px solid black;
+    width: 75vw;
+    height: 75vh;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    position:relative;
+}
+
+.child {
+    padding: 25px;
+}
+.static {
+    border: 2px solid red;
+    background-color: red;
+    /* Default position: static - top, bottom, left, right, z-index properties have NO EFFECT */
+}
+
+.relative {
+    border:2px solid blueviolet;
+    background-color: blueviolet;
+
+    position: relative;
+    /*top: 50px;
+    left: 50px; */
+    /* Moving relative to it's position within the flow of the document */
+    /*  DO NOT USE IT! It's too manual. */
+}
+
+.absolute{
+    border: 2px solid green;
+    background-color: green;
+    
+
+    /* position:absolute; */
+    right: 0;
+
+    /* Takes element out of flow. It is relative to root that's NOT static. */
+    /* Used for absolutely position children */
+}
+
+.fixed{
+    border: 2px solid teal;
+    background-color: teal;
+
+    /* position:fixed; */
+    top: 0;
+    /* Ignores parent element */
+    /* Based on ENTIRE viewport */
+    /* Absolute on parent relative will scroll */
+    /* Will not scroll away */
+}
+
+.sticky{
+    border: 2px solid gray;
+    background-color: gray;
+
+    position:sticky;
+    top:75px;
+    /* Acts like a combination of fixed and absolute */
+    /* Stays fixed once scroll occurs */
+    /* It's relative by default (doesn't move out of normal flow) */
+}
+
+/* 
+    CSS Position Property
+
+    ? Static
+    * default
+    * positioned in relation to elements
+    * top, bottom, left, right, z-index have NO effect
+
+    ? Relative
+    * just like static
+    * can be changed using top, bottom, left, right, z-index
+    * values are relative to its original static position
+    ! DON'T USE IT! Breaks the flow!
+
+    ? Absolute
+    * removes element from the flow
+    * positions it relative to parent container
+    * if parent is static, it will move outside of parent container
+    * if parent is relative, it will move within parent container
+    * positioning defined by top, bottom, left, right, z-index
+
+    ? Fixed
+    * like absolute
+    * positioned to viewport
+    * doesn't move when scrolling
+    * positioning defined by top, bottom, left, right, z-index
+
+    ? Sticky
+    * mix of relative and fixed
+    * relative to the flow
+    * position definition used for when you start scrolling
+    * stays fixed when scrolling; relative when stationary
+
+*/
+
+/* 
+    ?Display Propery
+
+    *Treats an element as block or inline
+    *Blocks are created top-to-bottom
+    *Inline are positioned side-by-side
+*/
+
+.display-container{
+    margin-top: 2em;
+}
+
+.block-container {
+    border: 2px solid black;
+    margin-top:2px;
+}
+
+.inline-element{
+    margin: 5px auto;
+    display: block;
+}
+
+.inline-block{
+    border: 2px solid black;
+    margin-top: 2px;
+
+    /* Initially a block */
+
+    display: inline-block;
+    width: 125px;
+
+    /* Inline block allows the element to act inline, but allows you to set width and height */
+    
+}
+
+.float-container {
+    margin-top: 2em;
+    border: 2px solid blue;
+    height: 20vw;
+}
+
+.float-box{
+    margin: 5px;
+    border: 2px solid orange;
+    background-color: orange;
+    width: 50px;
+    height: 50px;
+
+    float: right;
+}
